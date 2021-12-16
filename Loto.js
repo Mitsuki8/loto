@@ -12,6 +12,7 @@ let triomphe=document.getElementById("triomphe")
 
 
 function refresh(){
+	verif.innerHTML=""
 	for (let t = 0; t <11; t++){
 	document.getElementById("r"+t)
 	}
@@ -33,7 +34,24 @@ function refresh(){
 	r10.setAttribute("class","")
 	r11.setAttribute("class","")
 	
-	tirage()
+	verification()
+}
+
+function verification(){
+	let verif=document.getElementById("verif")
+	nombre1 = n1.value
+	nombre2 = n2.value
+	nombre3 = n3.value
+	nombre4 = n4.value
+	nombre5 = n5.value
+	nombre6 = n6.value
+	if(nombre1>49 || nombre1<1||nombre2>49 ||nombre2<1||nombre3>49||nombre3<1||nombre4>49||nombre4<1||nombre5>49||nombre5<1||nombre6>10||nombre1<1){
+verif.innerHTML="Veuillez vérifier vos valeurs"
+	}
+	else{
+		tirage()
+	}
+
 }
 function tirage() {
 	cpt = 0
@@ -73,12 +91,7 @@ function recherche(tab, valeur) {
 	return test
 }
 function comparer() {
-	nombre1 = n1.value
-	nombre2 = n2.value
-	nombre3 = n3.value
-	nombre4 = n4.value
-	nombre5 = n5.value
-	nombre6 = n6.value
+
 
 	for (i = 0; i <5; i++) {
 		if (resultat[i] == nombre1) cpt++;
@@ -105,6 +118,8 @@ function comparer() {
 function coloriage(){
 	if (cpt==5 && cpt2==true){
 		r1.setAttribute("class","is-selected")
+		let audio2 = new Audio('ff.mp3')
+		audio2.play()
 	}
 	else if (cpt==5 && cpt2==false){
 		r2.setAttribute("class","is-selected")
@@ -173,7 +188,7 @@ document.addEventListener('keydown', (e) => {
 function cheatcode(){
 	let audio = new Audio('son.wav')
 	audio.play()
-r1.setAttribute("class","")
+	r1.setAttribute("class","")
 	r2.setAttribute("class","")
 	r3.setAttribute("class","")
 	r4.setAttribute("class","")
@@ -184,8 +199,11 @@ r1.setAttribute("class","")
 	r9.setAttribute("class","")
 	r10.setAttribute("class","")
 	r11.setAttribute("class","")
-	let position=document.getElementById("position")
-	position.innerHTML="<img src=\bbutton.png\ width=50px height=18px onclick=jackpot()>"
+	//let position=document.getElementById("position")
+	//position.innerHTML="<img src=\bbutton.png\ width=60px height=22px onclick=jackpot()>"
+	axoloto.setAttribute("onclick","jackpot()")
+	axoloto.setAttribute("onmouseover","")
+	axoloto.setAttribute("style","cursor: pointer;")
 	
 }
 
@@ -199,6 +217,8 @@ e6.value=nombre6
 position.innerHTML=""
 r1.setAttribute("class","is-selected")
 triomphe.innerHTML="<em>À vaincre sans péril, on triomphe sans gloire.</em>"
+let audio2 = new Audio('ff.mp3')
+	audio2.play()
 }
 
 
