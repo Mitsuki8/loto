@@ -8,6 +8,7 @@ let win=document.getElementById("win")
 let cpt = 0
 let cpt2 = ""
 let duree=""
+let triomphe=document.getElementById("triomphe")
 
 
 function refresh(){
@@ -170,16 +171,35 @@ document.addEventListener('keydown', (e) => {
 });
 
 function cheatcode(){
-	var audio = new Audio('son.wav')
+	let audio = new Audio('son.wav')
 	audio.play()
+r1.setAttribute("class","")
+	r2.setAttribute("class","")
+	r3.setAttribute("class","")
+	r4.setAttribute("class","")
+	r5.setAttribute("class","")
+	r6.setAttribute("class","")
+	r7.setAttribute("class","")
+	r8.setAttribute("class","")
+	r9.setAttribute("class","")
+	r10.setAttribute("class","")
+	r11.setAttribute("class","")
+	let position=document.getElementById("position")
+	position.innerHTML="<img src=\bbutton.png\ width=50px height=18px onclick=jackpot()>"
+	
+}
+
+function jackpot(){
 e1.value=nombre1
 e2.value=nombre2
 e3.value=nombre3
 e4.value=nombre4
 e5.value=nombre5
 e6.value=nombre6
+position.innerHTML=""
+r1.setAttribute("class","is-selected")
+triomphe.innerHTML="<em>À vaincre sans péril, on triomphe sans gloire.</em>"
 }
-
 
 
 btnValider.addEventListener("click",refresh)
