@@ -10,10 +10,13 @@ let cpt2 = ""
 let duree=""
 let duree2=""
 let triomphe=document.getElementById("triomphe")
-
+let becassine=[]
+let cousine=""
 
 
 function refresh(){
+	win.innerHTML=""
+	cousine=0
 	let	year=0
 	duree=0
 	duree2=0
@@ -50,8 +53,21 @@ function verification(){
 	nombre4 = n4.value
 	nombre5 = n5.value
 	nombre6 = n6.value
-	if(nombre1>49 || nombre1<1||nombre2>49 ||nombre2<1||nombre3>49||nombre3<1||nombre4>49||nombre4<1||nombre5>49||nombre5<1||nombre6>10||nombre1<1){
+	becassine=[nombre1,nombre2,nombre3,nombre4,nombre5]
+	for (i = 0; i <5; i++) {
+		if (becassine[i] == nombre1) cousine++;
+		if (becassine[i] == nombre2) cousine++;
+		if (becassine[i] == nombre3) cousine++;
+		if (becassine[i] == nombre4) cousine++;
+		if (becassine[i] == nombre5) cousine++;
+		}
+	if(nombre1>49 || nombre1<1||nombre2>49 ||nombre2<1||nombre3>49||nombre3<1||nombre4>49||nombre4<1||nombre5>49||nombre5<1||nombre6>10||nombre6<1){
 verif.innerHTML="Veuillez vérifier vos valeurs"
+verif.setAttribute("class","notification is-danger is-light")
+	}
+	else if(cousine>5){
+verif.innerHTML="Veuillez vérifier vos valeurs"
+verif.setAttribute("class","notification is-danger is-light")
 	}
 	else{
 		tirage()
@@ -192,7 +208,7 @@ function coloriage(){
 		setTimeout(semaine2)
 		}
 	
- }
+ } 
 function semaine2(){
 		resultat.shift()
 		let x1=Math.floor(Math.random() * Math.floor(49) + 1)
