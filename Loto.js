@@ -15,6 +15,7 @@ let cousine=""
 
 
 function refresh(){
+	verif.setAttribute("class","")
 	win.innerHTML=""
 	cousine=0
 	let	year=0
@@ -268,6 +269,7 @@ cursor=0
 axoloto.removeAttribute("onclick","jackpot()")
 axoloto.removeAttribute("onmouseover","")
 axoloto.removeAttribute("style","cursor: pointer;")
+win.innerHTML=""
 }
 
 
