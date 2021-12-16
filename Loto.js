@@ -162,4 +162,35 @@ function semaine(){
 	}
 }
 
+let cursor = 0;
+const KONAMI_CODE = [38, 38, 40, 40, 37, 39, 37, 39];
+document.addEventListener('keydown', (e) => {
+  cursor = (e.keyCode == KONAMI_CODE[cursor]) ? cursor + 1 : 0;
+  if (cursor == KONAMI_CODE.length) cheatcode();
+});
+
+function cheatcode(){
+e1.value=nombre1
+sleep(500)
+e2.value=nombre2
+sleep(500)
+e3.value=nombre3
+sleep(500)
+e4.value=nombre4
+sleep(500)
+e5.value=nombre5
+sleep(500)
+e6.value=nombre6
+}
+
+
+function sleep(milliseconds) {
+	const date = Date.now();
+	let currentDate = null;
+	do {
+	  currentDate = Date.now();
+	} while (currentDate - date < milliseconds);
+  }
+
+
 btnValider.addEventListener("click",refresh)
