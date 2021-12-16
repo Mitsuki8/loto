@@ -142,7 +142,7 @@ function coloriage(){
 	e4.value=resultat[3]
 	e5.value=resultat[4]
 	e6.value=tirage6
-	semaine()
+	//semaine()
 }
 
 function semaine(){
@@ -170,27 +170,16 @@ document.addEventListener('keydown', (e) => {
 });
 
 function cheatcode(){
+	var audio = new Audio('son.wav')
+	audio.play()
 e1.value=nombre1
-sleep(500)
 e2.value=nombre2
-sleep(500)
 e3.value=nombre3
-sleep(500)
 e4.value=nombre4
-sleep(500)
 e5.value=nombre5
-sleep(500)
 e6.value=nombre6
 }
 
-
-function sleep(milliseconds) {
-	const date = Date.now();
-	let currentDate = null;
-	do {
-	  currentDate = Date.now();
-	} while (currentDate - date < milliseconds);
-  }
 
 
 btnValider.addEventListener("click",refresh)
