@@ -188,17 +188,6 @@ document.addEventListener('keydown', (e) => {
 function cheatcode(){
 	let audio = new Audio('son.wav')
 	audio.play()
-	r1.setAttribute("class","")
-	r2.setAttribute("class","")
-	r3.setAttribute("class","")
-	r4.setAttribute("class","")
-	r5.setAttribute("class","")
-	r6.setAttribute("class","")
-	r7.setAttribute("class","")
-	r8.setAttribute("class","")
-	r9.setAttribute("class","")
-	r10.setAttribute("class","")
-	r11.setAttribute("class","")
 	//let position=document.getElementById("position")
 	//position.innerHTML="<img src=\bbutton.png\ width=60px height=22px onclick=jackpot()>"
 	axoloto.setAttribute("onclick","jackpot()")
@@ -208,6 +197,17 @@ function cheatcode(){
 }
 
 function jackpot(){
+r1.setAttribute("class","")
+r2.setAttribute("class","")
+r3.setAttribute("class","")
+r4.setAttribute("class","")
+r5.setAttribute("class","")
+r6.setAttribute("class","")
+r7.setAttribute("class","")
+r8.setAttribute("class","")
+r9.setAttribute("class","")
+r10.setAttribute("class","")
+r11.setAttribute("class","")
 e1.value=nombre1
 e2.value=nombre2
 e3.value=nombre3
@@ -218,7 +218,11 @@ position.innerHTML=""
 r1.setAttribute("class","is-selected")
 triomphe.innerHTML="<em>À vaincre sans péril, on triomphe sans gloire.</em>"
 let audio2 = new Audio('ff.mp3')
-	audio2.play()
+audio2.play()
+cursor=0
+axoloto.removeAttribute("onclick","jackpot()")
+axoloto.removeAttribute("onmouseover","")
+axoloto.removeAttribute("style","cursor: pointer;")
 }
 
 
