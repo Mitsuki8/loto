@@ -8,10 +8,15 @@ let win=document.getElementById("win")
 let cpt = 0
 let cpt2 = ""
 let duree=""
+let duree2=""
 let triomphe=document.getElementById("triomphe")
 
 
+
 function refresh(){
+	let	year=0
+	duree=0
+	duree2=0
 	verif.innerHTML=""
 	for (let t = 0; t <11; t++){
 	document.getElementById("r"+t)
@@ -158,11 +163,37 @@ function coloriage(){
 	e4.value=resultat[3]
 	e5.value=resultat[4]
 	e6.value=tirage6
-	//semaine()
+	semaine1()
+	
 }
 
-function semaine(){
-	if(resultat!=resultat2){
+ function semaine1(){
+	year=((duree2*4000)+duree)/52
+	year=Math.round(year)
+	let boucle=0
+	 for (i = 0; i <5; i++) {
+		if (resultat[i] == nombre1) boucle++;
+		if (resultat[i] == nombre2) boucle++;
+		if (resultat[i] == nombre3) boucle++;
+		if (resultat[i] == nombre4) boucle++;
+		if (resultat[i] == nombre5) boucle++;
+	}
+		if(boucle==5){
+		win.innerHTML="Avec cette combinaison vous auriez gagné en "+year+" années"
+	 }
+		 
+	else if(boucle!=5&&duree<4000){
+		duree++
+		semaine2()
+	}
+	else{
+		duree=0
+		duree2++
+		setTimeout(semaine2)
+		}
+	
+ }
+function semaine2(){
 		resultat.shift()
 		let x1=Math.floor(Math.random() * Math.floor(49) + 1)
 		let x2=Math.floor(Math.random() * Math.floor(49) + 1)
@@ -170,13 +201,11 @@ function semaine(){
 		let x4=Math.floor(Math.random() * Math.floor(49) + 1)
 		let x5=Math.floor(Math.random() * Math.floor(49) + 1)
 		resultat=[x1,x2,x3,x4,x5]
-		duree++
-		semaine()
-		}
-		else{
-			win.innerHTML=("Avec cette combinaison vous auriez gagné en "+duree+" semaines")
-	}
+		semaine1()
 }
+
+
+
 
 let cursor = 0;
 const KONAMI_CODE = [38, 38, 40, 40, 37, 39, 37, 39];
