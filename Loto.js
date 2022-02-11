@@ -32,6 +32,21 @@ for (let y = 0; y <6; y++){ //Boucle permettant de déclarer e1 -> e6 (affichage
 		document.getElementById("e"+y)
 		}
 
+//Fonction permettant générer les 6 champs automatiquement, merci M. Roumanet !
+function createFields(n) {
+			let gamerNumbers=document.getElementById("gamerNumbers")
+			let computerNumbers = document.getElementById("computerNumbers")
+			for (let t=1; t<=n; t++) {
+				console.log(t)
+				gamerNumbers.innerHTML = gamerNumbers.innerHTML + '<input type="text" class="input is-rounded" id="n'+t+'" required value=""/>'
+				computerNumbers.innerHTML = computerNumbers.innerHTML + '<input type="text" class="input is-rounded" id="e'+t+'" required value=""/>'
+			}
+			console.log(gamerNumbers.innerHTML)
+		}
+		
+		createFields(6)
+
+
 //Fonction permettant d'éviter de devoir Refresh la page après avoir joué et/ou activé le cheat code.
 //Elle permet de remettre les compteurs à 0 et d'annuler les modifications d'affichages.
 function refresh(){

@@ -1,19 +1,36 @@
 html {
 	background-color: #f7f1e9;
 		}
-.input {
-width:6%;
+
+.is-rounded {
+width: 4%;
 text-align:center;
-}
-.paulette{
-width:8%;
+
 }
 body{
 margin-left:40%;
+
 }
 table{
 margin-left:10%;
 }
+
 p{
 	margin-right: 75%;
+}
+
+.paulette{
+	top:15%;
+	left:58%;
+	width:100px;
+	height:40px;
+	position: absolute;
+}
+
+#boules{
+	margin-left:7%;
+}
+
+#win{
+	margin-left: 5%;
 }
